@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển tiền</title>
+</head>
+<body>
+    <table border='1' style="background-color: rgb(106, 233, 255);text-align: center;">
+        <tr>
+            <td><b>Nhập tiền chuyển</td>
+            <td>Đơn vị chuyển</td>
+            <td>Đơn vị đến</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" id ="dau_vao"> 
+            </td>
+            <td>
+                <select name=""id="gia_tri1">
+                    <option value="vnd">VNĐ</option>
+                    <option value="usd">USD</option>
+                </select>
+            </td>
+            <td>
+                <select name="" id="gia_tri2">
+                    <option value="vnd">VNĐ</option>
+                    <option value="usd">USD</option>
+                </select>
+            </td>
+            <td>
+                <input style="background: lightcoral;" type="button" onclick="Chuyentien ()"  value="Chuyển đổi">
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: left;"  id="Kết quả" colspan="4"></td>
+        </tr>
+    </table>
+    <script>
+    function Chuyentien () {
+        let tien_vao = document.getElementById('dau_vao').value;
+        let gia_tri1 = document.getElementById('gia_tri1').value;
+        let gia_tri2 = document.getElementById('gia_tri2').value;
+        if (gia_tri1 == gia_tri2) {
+            //Cách 1: alert (tien_vao);
+            document.getElementById("Kết quả").innerText=`Kết quả: ${tien_vao}`;
+        }
+        if (gia_tri1 == 'vnd' && gia_tri2 == 'usd') {
+            // Cách 1: alert (tien_vao/22647.5);
+            document.getElementById("Kết quả").innerText=`Kết quả: ${tien_vao/22647.5}`;
+        }
+        if (gia_tri1 == 'usd' && gia_tri2 == 'vnd') {
+            //Cách 1: alert (tien_vao/0.0000441257584114727);
+            document.getElementById("Kết quả").innerText=`Kết quả: ${tien_vao/0.0000441257584114727}`;
+    }
+}
+        
+    </script>
+</body>
+<p>©2021 Bản quyền thuộc về: Viefox Infomation Technolory</p>
+<p>Trang web được viết bởi: Vũ Khoan</p>
+</html>
